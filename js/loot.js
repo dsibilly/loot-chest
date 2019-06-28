@@ -6,11 +6,11 @@ import MersenneTwister from '@dsibilly/mersenne-twister';
 const Loot = _make({
     generate (callbackFunction) {
         if (!this._typeConfigured) {
-            this.itemType = this._generateItemType();
+            this.itemType = Loot.generateItemType();
         }
 
         if (!this._prefixConfigured || !this._suffixConfigured) {
-            const affixes = this._determineAffixes();
+            const affixes = Loot.determineAffixes();
 
             if (!this._prefixConfigured) {
                 this.hasPrefix = affixes.hasPrefix;
@@ -42,10 +42,10 @@ const Loot = _make({
             prefixes = Loot.prefixesForItemType(this.itemType),
             suffixes = Loot.suffixesForItemType(this.itemType),
             prefix = this.hasPrefix ?
-                prefixes[Math.floor(this._rng.random() * prefixes.length)] :
+                Loot.pick(prefixes) :
                 null,
             suffix = this.hasSuffix ?
-                suffixes[Math.floor(this._rng.random() * suffixes.length)] :
+                Loot.pick(suffixes) :
                 null,
 
             result = {
@@ -54,75 +54,40 @@ const Loot = _make({
                 name: makeName(this.itemType, prefix, suffix)
             };
 
-        if (prefix) {
-            result.affixes.push(`${prefix.name}: ${prefix.description[this.itemType]}`);
+        if (this.hasPrefix) {
+            result.affixes.push({
+                description: prefix.description[this.itemType],
+                name: prefix.name,
+                type: 'prefix'
+            });
         }
 
-        if (suffix) {
-            result.affixes.push(`${suffix.name}: ${suffix.description[this.itemType]}`);
+        if (this.hasSuffix) {
+            result.affixes.push({
+                description: suffix.description[this.itemType],
+                name: suffix.name,
+                type: 'suffix'
+            });
         }
 
         callbackFunction(result);
         return this;
     },
-    _determineAffixes () {
-        /*
-        | 1d6 Roll | Item Affixes |
-        |:--------:|:-------------|
-        | 1-2      | Prefix       |
-        | 3-4      | Suffix       |
-        | 5-6      | Both         |
-        */
-        return [
-            {
-                hasPrefix: true,
-                hasSuffix: false
-            },
-            {
-                hasPrefix: false,
-                hasSuffix: true
-            },
-            {
-                hasPrefix: true,
-                hasSuffix: true
-            }
-        ][Math.floor(this._rng.random() * 3)];
-    },
-    _generateItemType () {
-        /*
-        | 1d6 Roll | Item Type |
-        |:--------:|:----------|
-        | 1-2      | Weapon    |
-        | 3        | Armor     |
-        | 4        | Shield    |
-        | 5        | Amulet    |
-        | 6        | Ring      |
-        */
-        return [
-            'weapon',
-            'weapon',
-            'armor',
-            'shield',
-            'amulet',
-            'ring'
-        ][Math.floor(this._rng.random() * 6)];
-    },
     _init (config) {
-        this._rng = new MersenneTwister();
         this._typeConfigured = false;
         this._prefixConfigured = false;
         this._suffixConfigured = false;
         this.hasPrefix = false;
         this.hasSuffix = false;
 
-        const affixes = this._determineAffixes();
+        const affixes = Loot.determineAffixes();
 
         if (config) {
             if (config.itemType) {
                 this.itemType = config.itemType;
                 this._typeConfigured = true;
             } else {
-                this.itemType = this._generateItemType();
+                this.itemType = Loot.generateItemType();
             }
 
             if (config.hasOwnProperty('hasPrefix')) {
@@ -135,7 +100,7 @@ const Loot = _make({
                 this._suffixConfigured = true;
             }
         } else {
-            this.itemType = this._generateItemType();
+            this.itemType = Loot.generateItemType();
             this.hasPrefix = affixes.hasPrefix;
             this.hasSuffix = affixes.hasSuffix;
         }
@@ -143,9 +108,55 @@ const Loot = _make({
         return this;
     }
 }, {
+    determineAffixes () {
+        /*
+        | 1d6 Roll | Item Affixes |
+        |:--------:|:-------------|
+        | 1-2      | Prefix       |
+        | 3-4      | Suffix       |
+        | 5-6      | Both         |
+        */
+        return Loot.pick([
+            {
+                hasPrefix: true,
+                hasSuffix: false
+            },
+            {
+                hasPrefix: false,
+                hasSuffix: true
+            },
+            {
+                hasPrefix: true,
+                hasSuffix: true
+            }
+        ]);
+    },
+    generateItemType () {
+        /*
+        | 1d6 Roll | Item Type |
+        |:--------:|:----------|
+        | 1-2      | Weapon    |
+        | 3        | Armor     |
+        | 4        | Shield    |
+        | 5        | Amulet    |
+        | 6        | Ring      |
+        */
+        return Loot.pick([
+            'weapon',
+            'weapon',
+            'armor',
+            'shield',
+            'amulet',
+            'ring'
+        ]);
+    },
+    pick (array) {
+        return array[Math.floor(Loot.rng.random() * array.length)];
+    },
     prefixesForItemType (itemType) {
         return Object.keys(_prefixesByItemType[itemType]).map(prefixId => _prefixesByItemType[itemType][prefixId]);
     },
+    rng: new MersenneTwister(),
     suffixesForItemType (itemType) {
         return Object.keys(_suffixesByItemType[itemType]).map(suffixId => _suffixesByItemType[itemType][suffixId]);
     }
