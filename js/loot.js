@@ -1,3 +1,7 @@
+import _Error from 'isotropic-error';
+import {
+    validator as _itemValidator
+} from './data/item-types';
 import _make from 'isotropic-make';
 import _prefixesByItemType from './data/prefixes-by-item-type';
 import _suffixesByItemType from './data/suffixes-by-item-type';
@@ -57,6 +61,7 @@ const Loot = _make({
         if (this.hasPrefix) {
             result.affixes.push({
                 description: prefix.description[this.itemType],
+                id: prefix.id,
                 name: prefix.name,
                 type: 'prefix'
             });
@@ -65,6 +70,7 @@ const Loot = _make({
         if (this.hasSuffix) {
             result.affixes.push({
                 description: suffix.description[this.itemType],
+                id: suffix.id,
                 name: suffix.name,
                 type: 'suffix'
             });
@@ -84,6 +90,15 @@ const Loot = _make({
 
         if (config) {
             if (config.itemType) {
+                if (!_itemValidator(config.itemType)) {
+                    throw new _Error({
+                        details: {
+                            itemType: config.itemType
+                        },
+                        message: 'Cannot create a Loot object with an invalid item type!'
+                    });
+                }
+
                 this.itemType = config.itemType;
                 this._typeConfigured = true;
             } else {

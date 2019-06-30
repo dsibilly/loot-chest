@@ -3,10 +3,10 @@ export default {
     accuracy: {
         name: 'Accuracy',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Accuracy by 1.',
             ring: 'This ring increases the wearer\'s Accuracy by 1.'
@@ -15,10 +15,10 @@ export default {
     agile: {
         name: 'Agile',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor\'s Armor Penalty by is reduced 2.',
             shield: 'This shield provides an additional +1 bonus to Defense.'
@@ -27,10 +27,10 @@ export default {
     amber: {
         name: 'Amber',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any lightning damage taken by the wearer by 5. This includes penetrating damage.',
             shield: 'This shield reduces any lightning damage taken by the wearer by 5. This includes penetrating damage.'
@@ -39,9 +39,9 @@ export default {
     astral: {
         name: 'Astral',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon grants a +1 bonus on attack rolls and a bonus +1d6 penetrating damage against demons.'
         }
@@ -49,10 +49,10 @@ export default {
     azure: {
         name: 'Azure',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any cold dmaage taken by the wearer by 5. This includes penetrating damage.',
             shield: 'This shield reduces any cold damage taken by the wearer by 5. This includes penetrating damage.'
@@ -61,10 +61,10 @@ export default {
     balance: {
         name: 'Balance',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor prevents the wearer from being knocked prone.',
             shield: 'This shield prevents the wearer from being knocked prone.'
@@ -73,9 +73,9 @@ export default {
     bear: {
         name: 'The Bear',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Ursine Fury stunt for 3 SP. This stunt causes the target to be knocked 6 yards directly away from you, and the target is knocked prone.'
         }
@@ -83,10 +83,10 @@ export default {
     blessed: {
         name: 'Blessed',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any chaos damage taken by the wearer by 5. This applies to penetrating damage.',
             shield: 'This shield reduces any chaos damage taken by the wearer by 5. This applies to penetrating damage.'
@@ -95,9 +95,9 @@ export default {
     blight: {
         name: 'Blight',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Contagion stunt for 5 SP. This stunt causes the target to take 2d6 penetrating poison damage.'
         }
@@ -105,9 +105,9 @@ export default {
     blocking: {
         name: 'Blocking',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon grants the wielder a +2 bonus to Defense.'
         }
@@ -115,9 +115,9 @@ export default {
     brutal: {
         name: 'Brutal',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon deals a bonus +1d6 damage on a successful hit.'
         }
@@ -125,9 +125,9 @@ export default {
     burning: {
         name: 'Burning',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Immolate stunt for 4 SP. The target is lit on fire and takes 1d6 fire damage on the beginning of its turn. The target must spend a major action to put out the flames, or be extinguished by other means.'
         }
@@ -135,10 +135,10 @@ export default {
     champions: {
         name: 'Champion\'s',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet grants the wearer a +2 bonus to Communication (Leadership) and Willpower (Courage) tests.',
             ring: 'This ring grants the wearer a +2 bonus to Communication (Leadership) and Willpower (Courage) tests.'
@@ -147,10 +147,10 @@ export default {
     communication: {
         name: 'Communication',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Communication by 1.',
             ring: 'This ring increases the wearer\'s Communication by 1.'
@@ -159,10 +159,10 @@ export default {
     constitution: {
         name: 'Constitution',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Constitution by 1. This also increases their maximum Health by 1 per character level, up to 10. If removing this amulet reduces the wearer to 0 Health, the character is dying. If removing it reduces the wearer to less than 0 Health, they die.',
             ring: 'This ring increases the wearer\'s Constitution by 1. This also increases their maximum Health by 1 per character level, up to 10. If removing this amulet reduces the wearer to 0 Health, the character is dying. If removing it reduces the wearer to less than 0 Health, they die.'
@@ -171,10 +171,10 @@ export default {
     crimson: {
         name: 'Crimson',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any fire damage taken by the wearer by 5. This applies to penetrating damage.',
             shield: 'This shield reduces any fire damage taken by the wearer by 5. This applies to penetrating damage.'
@@ -183,9 +183,9 @@ export default {
     deadly: {
         name: 'Deadly',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'The wielder of this weapon may use the Mighty Blow and Lethal Blow stunts for 1 SP less than their normal cost.'
         }
@@ -193,10 +193,10 @@ export default {
     demon: {
         name: 'The Demon',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants its wearer a +2 bonus to Strength (Intimidation) tests and a +1 bonus to all damage rolls.',
             shield: 'This shield grants is wearer a +2 bonus to Strength (Intimidation) tests and a +1 bonus to all damage rolls.'
@@ -205,10 +205,10 @@ export default {
     dexterity: {
         name: 'Dexterity',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Dexterity by 1. Dexterity affects Defense and Speed.',
             ring: 'This ring increases the wearer\'s Dexterity by 1. Dexterity affects Defense and Speed.'
@@ -217,10 +217,10 @@ export default {
     diamond: {
         name: 'Diamond',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces reduces any arcane damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Accuracy (Arcane Blast) tests.',
             ring: 'This ring reduces reduces any arcane damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Accuracy (Arcane Blast) tests.'
@@ -229,10 +229,10 @@ export default {
     eagles: {
         name: 'Eagle\'s',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet grants the wearer a +2 bonus to Perception (Searching) and Perception (Seeing) tests.',
             ring: 'This ring grants the wearer a +2 bonus to Perception (Searching) and Perception (Seeing) tests.'
@@ -241,10 +241,10 @@ export default {
     eel: {
         name: 'The Eel',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus on Constitution (Swimming) tests.',
             shield: 'This shield grants the wearer a +2 bonus on Constitution (Swimming) tests.'
@@ -253,10 +253,10 @@ export default {
     emerald: {
         name: 'Emerald',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any poison damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Stamina) tests.',
             ring: 'This ring reduces any poison damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Stamina) tests.'
@@ -265,10 +265,10 @@ export default {
     fighting: {
         name: 'Fighting',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Fighting by 1.',
             ring: 'This ring increases the wearer\'s Fighitng by 1.'
@@ -277,9 +277,9 @@ export default {
     flaming: {
         name: 'Flaming',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon deals a bonus +1d6 fire damage on a successful hit.'
         }
@@ -287,10 +287,10 @@ export default {
     fortified: {
         name: 'Fortified',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces penetrating damage by one-third its Armor Rating (rounded down.)',
             shield: 'This shield grants a bonus +1 to Defense.'
@@ -299,9 +299,9 @@ export default {
     foul: {
         name: 'Foul',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Envenom stunt for 2 SP. The target must attempt a TN 14 Constitution (Stamina) test at the beginning of their next turn; if they fail, they suffer 1d6 penetrating poison damage.'
         }
@@ -309,9 +309,9 @@ export default {
     glowing: {
         name: 'Glowing',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon casts light as bright as a torch when drawn.'
         }
@@ -319,10 +319,10 @@ export default {
     greedy: {
         name: 'Greedy',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet grants the wearer a +2 bonus to Communication (Gambling) and Intelligence (Evaluation) tests.',
             ring: 'This ring grants the wearer a +2 bonus to Communication (Gambling) and Intelligence (Evaluation) tests.'
@@ -331,10 +331,10 @@ export default {
     health: {
         name: 'Health',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer +2 Health per level.',
             shield: 'This shield grants the wearer +2 Health per level.'
@@ -343,10 +343,10 @@ export default {
     hellforged: {
         name: 'Hellforged',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any holy damage taken by the wearer by 5. This applies to penetrating damage.',
             shield: 'This shield reduces any holy damage taken by the wearer by 5. This applies to penetrating damage.'
@@ -355,10 +355,10 @@ export default {
     intelligence: {
         name: 'Intelligence',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Intelligence by 1. Intelligence affects Spellpower.',
             ring: 'This ring increases the wearer\'s Intelligence by 1. Intelligence affects Spellpower.'
@@ -367,10 +367,10 @@ export default {
     jade: {
         name: 'Jade',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor reduces any poison damage taken by the wearer by 5. This applies to penetrating damage.',
             shield: 'This shield reduces any poison damage taken by the wearer by 5. This applies to penetrating damage.'
@@ -379,10 +379,10 @@ export default {
     knight: {
         name: 'The Knight',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus on all Dexterity (Riding) tests.',
             shield: 'This shield grants the wearer a +2 bonus on all Dexterity (Riding) tests.'
@@ -391,9 +391,9 @@ export default {
     leech: {
         name: 'The Leech',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Sap stunt for 1 SP. Upon performing the Sap stunt, the wielder is healed for 1d6 Health. The wielder cannot regain Health exceeding the amount of damage taken by the attack\'s target.'
         }
@@ -401,9 +401,9 @@ export default {
     lucky: {
         name: 'Lucky',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'Once per encounter when attacking with this weapon you may re-roll a missed attack. You must keep the results of the second roll.'
         }
@@ -411,10 +411,10 @@ export default {
     mages: {
         name: 'Mage\'s',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor\'s Strain is reduced by 2.',
             shield: 'This shield reduces any arcane damage taken by the wearer by 5. This applies to penetrating damage.'
@@ -423,9 +423,9 @@ export default {
     magus: {
         name: 'The Magus',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'The wielder of this weapon may use the Fast Casting stung for 1 SP less than normal.'
         }
@@ -433,10 +433,10 @@ export default {
     mana: {
         name: 'Mana',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer +2 Magic Points per level.',
             shield: 'This shield grants the wearer +2 Magic Points per level.'
@@ -445,9 +445,9 @@ export default {
     master: {
         name: 'The Master',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'When the wielder generates Stunt Points on an attack with this weapon, they get an additional 1 SP to spend.'
         }
@@ -455,9 +455,9 @@ export default {
     meteoric: {
         name: 'Metoric',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon grants a +1 bonus to attack and damage rolls.'
         }
@@ -465,10 +465,10 @@ export default {
     might: {
         name: 'Might',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus on all Strength (Might) tests.',
             shield: 'This shield grants the wearer a +2 bonus on all Strength (Might) tests.'
@@ -477,10 +477,10 @@ export default {
     negation: {
         name: 'Negation',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus on any test made to avoid or reduce the effect of a spell of which they are a target.',
             shield: 'This shield grants the wearer a +2 bonus on any test made to avoid or reduce the effect of a spell of which they are a target.'
@@ -489,10 +489,10 @@ export default {
     obsidian: {
         name: 'Obsidian',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any holy damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Strength (Intimidation) tests.',
             ring: 'This ring reduces any holy damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Strength (Intimidation) tests.'
@@ -501,10 +501,10 @@ export default {
     pearl: {
         name: 'Pearl',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any unholy damage taken by its wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Perception (Empathy) tests.',
             ring: 'This ring reduces any unholy damage taken by its wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Perception (Empathy) tests.'
@@ -513,10 +513,10 @@ export default {
     perception: {
         name: 'Perception',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Perception by 1. This affects damage with bows and crossbows.',
             ring: 'This ring increases the wearer\'s Perception by 1. This affects damage with bows and crossbows.'
@@ -525,9 +525,9 @@ export default {
     piercing: {
         name: 'Piercing',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Negate Armor stunt for 4 SP. Negate Armor allows you to ignore the target\'s Armor Rating for this attack.'
         }
@@ -535,10 +535,10 @@ export default {
     power: {
         name: 'Power',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Spellpower by 2.',
             ring: 'This ring increases the wearer\'s Spellpower by 2.'
@@ -547,10 +547,10 @@ export default {
     protection: {
         name: 'Protection',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet grants the wearer a +2 bonus to Defense and an Armor Rating of 5. This Armor Rating does not stack with any other armor worn by the character.',
             ring: 'This ring grants the wearer a +2 bonus to Defense and an Armor Rating of 5. This Armor Rating does not stack with any other armor worn by the character.'
@@ -559,9 +559,9 @@ export default {
     prowess: {
         name: 'Prowess',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon grants a +2 bonus on attack rolls.'
         }
@@ -569,9 +569,9 @@ export default {
     pure: {
         name: 'Pure',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon grants a +1 bonus on attack rolls and deals +1d6 penetrating damage against undead.'
         }
@@ -579,10 +579,10 @@ export default {
     quartz: {
         name: 'Quartz',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any lightning damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Running) tests.',
             ring: 'This ring reduces any lightning damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Running) tests.'
@@ -591,9 +591,9 @@ export default {
     quickness: {
         name: 'Quartz',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'The wielder of this weapon may perform the Lightning Attack stunt for 1 SP.'
         }
@@ -601,10 +601,10 @@ export default {
     reptilian: {
         name: 'Reptilian',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'When the wearer of this armor regains Health, they regain an additional 1d6 Health.',
             shield: 'When the wearer of this shield regains Health, they regain an additional 1d6 Health.'
@@ -613,10 +613,10 @@ export default {
     ruby: {
         name: 'Ruby',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any fire damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Willpower (Courage) tests.',
             ring: 'This ring reduces any fire damage taken by the wearer by 3. This applies to penetrating damage. The wearer gians a +2 bonus to Willpower (Courage) tests.'
@@ -625,10 +625,10 @@ export default {
     sages: {
         name: 'Sage\'s',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet grants the wearer a +2 bonus to all Intelligence tests with a Lore-based focus, e.g. Cultural Lore, Historical Lore, et al.',
             ring: 'This ring grants the wearer a +2 bonus to all Intelligence tests with a Lore-based focus, e.g. Cultural Lore, Historical Lore, et al.'
@@ -637,10 +637,10 @@ export default {
     sapphire: {
         name: 'Sapphire',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any cold damage taken by its wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Swimming) tests.',
             ring: 'This ring reduces any cold damage taken by its wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Constitution (Swimming) tests.'
@@ -649,10 +649,10 @@ export default {
     seraph: {
         name: 'The Seraph',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus to Willpower (Self-Discipline) tests and reduces all damage by 2, including penetrating damage.',
             shield: 'This shield grants the wearer a +2 bonus to Willpower (Self-Discipline) tests and reduces all damage by 2, including penetrating damage.'
@@ -661,10 +661,10 @@ export default {
     serpents: {
         name: 'Serpent\'s',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer +1 MP per level.',
             shield: 'This shield grants the wearer +1 MP per level.'
@@ -673,9 +673,9 @@ export default {
     shivering: {
         name: 'Shivering',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon deals a bonus +1d6 cold damage on a successful hit.'
         }
@@ -683,9 +683,9 @@ export default {
     shocking: {
         name: 'Shocking',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'This weapon deals a bonus +1d6 lightning damage on a successful hit.'
         }
@@ -693,10 +693,10 @@ export default {
     speed: {
         name: 'Speed',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor increases the wearer\'s Speed by 4 yards.',
             shield: 'This shield increases the wearer\'s Speed by 4 yards.'
@@ -705,10 +705,10 @@ export default {
     stalwart: {
         name: 'Stalwart',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants an additional +2 Armor Rating.',
             shield: 'This shield grants an additional +1 Defense.'
@@ -717,10 +717,10 @@ export default {
     stamina: {
         name: 'Stamina',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor grants the wearer a +2 bonus on all Constitution (Stamina) tests.',
             shield: 'This shield grants the wearer a +2 bonus on all Constitution (Stamina) tests.'
@@ -729,9 +729,9 @@ export default {
     storms: {
         name: 'Storms',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Shocking Burst stunt for 5 SP. Shocking Burst deals 1d6 lightning damage to the target and all other enemies within 6 yards of the target.'
         }
@@ -739,10 +739,10 @@ export default {
     strength: {
         name: 'Strength',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Strength by 1. This affects damage with most weapons.',
             ring: 'This ring increases the wearer\'s Strength by 1. This affects damage with most weapons.'
@@ -751,10 +751,10 @@ export default {
     thorns: {
         name: 'Thorns',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor inflicts 1d3 penetrating damage to any creature that successfully damages the wearer.',
             shield: 'This shield inflicts 1d3 penetrating damage to any creature that successfully damages the wearer.'
@@ -763,10 +763,10 @@ export default {
     topaz: {
         name: 'Topaz',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet reduces any psychic damage taken by the wearer by 3. This applies to penetrating damage. The wearer gains a +2 bonus to Willpower (Self-Discipline) tests.',
             ring: 'This ring reduces any psychic damage taken by the wearer by 3. This applies to penetrating dmaage. The wearer gains a +2 bonus to Willpower (Self-Discipline) tests.'
@@ -775,10 +775,10 @@ export default {
     vulpine: {
         name: 'Vulpine',
         type: 'prefix',
-        itemTypes: [
+        itemTypes: new Set([
             'armor',
             'shield'
-        ],
+        ]),
         description: {
             armor: 'This armor allows the wearer to apply damage to MP instead of Health. For each point of damage absorbed in this way, the wearer loses 2 MP.',
             shield: 'This shield allows the wearer to apply damage to MP instead of Health. For each point of damage absorbed in this way, the wearer loses 2 MP.'
@@ -787,10 +787,10 @@ export default {
     willpower: {
         name: 'Willpower',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases the wearer\'s Willpower by 1.',
             ring: 'This ring increases the wearer\'s Willpower by 1.'
@@ -799,9 +799,9 @@ export default {
     winter: {
         name: 'Winter',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'weapon'
-        ],
+        ]),
         description: {
             weapon: 'On a successful hit with this weapon, you may perform the Winter\'s Grip stunt for 5 SP. Winter\'s Grasp deals +1d6 cold damage to the target and ice freezes them in place. The target is unable to move unless it spends a minor action to break free, or the ice is otherwise shattered or melted.'
         }
@@ -809,10 +809,10 @@ export default {
     wrath: {
         name: 'Wrath',
         type: 'suffix',
-        itemTypes: [
+        itemTypes: new Set([
             'amulet',
             'ring'
-        ],
+        ]),
         description: {
             amulet: 'This amulet increases any damage dealt by the wearer by 2.',
             ring: 'This ring increases any damage dealt by the wearer by 2.'

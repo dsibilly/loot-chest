@@ -1,16 +1,13 @@
+import validItemTypes from './data/item-types';
+import {
+    logResponse
+} from './logger';
 import Loot from './loot';
 import {
     Router
 } from 'express';
 
-const lootRouter = new Router(),
-    validItemTypes = new Set([
-        'amulet',
-        'armor',
-        'ring',
-        'shield',
-        'weapon'
-    ]);
+const lootRouter = new Router();
 
 let counter = 0,
     loot = new Loot();
@@ -18,6 +15,7 @@ let counter = 0,
 lootRouter.get('/', (request, response) => {
     loot.generate(result => {
         response.send(result);
+        logResponse(request.id, result, 200);
 
         counter += 1;
 
@@ -40,17 +38,22 @@ lootRouter.get('/:itemType/', (request, response) => {
             errorCode: 400,
             message: `'${itemType}' is an invalid item type`
         });
+        logResponse(request.id, {
+            errorCode: 400,
+            message: `'${itemType}' is an invalid item type`
+        }, 400);
         return;
     }
 
     loot.generate(result => {
         response.send(result);
+        logResponse(request.id, result, 200);
     });
 });
 
 lootRouter.post('/:itemType/', (request, response) => {
-    const hasPrefix = request.body.hasOwnProperty('hasPrefix') && request.body.hasPrefix === 'true',
-        hasSuffix = request.body.hasOwnProperty('hasSuffix') && request.body.hasSuffix === 'true',
+    const hasPrefix = request.body.hasOwnProperty('hasPrefix') && request.body.hasPrefix === true,
+        hasSuffix = request.body.hasOwnProperty('hasSuffix') && request.body.hasSuffix === true,
         itemType = request.params.itemType;
 
     let loot;
@@ -62,6 +65,10 @@ lootRouter.post('/:itemType/', (request, response) => {
             errorCode: 400,
             message: `'${itemType}' is an invalid item type`
         });
+        logResponse(request.id, {
+            errorCode: 400,
+            message: `'${itemType}' is an invalid item type`
+        }, 400);
         return;
     }
 
@@ -78,6 +85,7 @@ lootRouter.post('/:itemType/', (request, response) => {
 
     loot.generate(result => {
         response.send(result);
+        logResponse(request.id, result, 200);
     });
 });
 

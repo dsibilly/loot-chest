@@ -4,6 +4,9 @@ import {
 } from 'mocha';
 
 import affixesById from '../js/data/affixes-by-id';
+import {
+    validator as itemValidator
+} from '../js/data/item-types';
 
 import {
     expect
@@ -21,20 +24,12 @@ describe('affixes-by-id', () => {
             expect(affix).to.be.an('object');
             expect(affix).to.have.property('name').that.is.a('string');
             expect(affix).to.have.property('type').that.is.a('string');
-            expect(affix).to.have.property('itemTypes').that.is.an('array');
+            expect(affix).to.have.property('itemTypes').that.is.an('set');
             expect(affix).to.have.property('description').that.is.an('object');
         });
     });
 
     describe('content', () => {
-        const itemTypes = [
-            'amulet',
-            'armor',
-            'ring',
-            'shield',
-            'weapon'
-        ];
-
         Object.keys(affixesById).forEach(affixId => {
             const affix = affixesById[affixId];
 
@@ -63,20 +58,20 @@ describe('affixes-by-id', () => {
                 });
 
                 describe('itemTypes', () => {
-                    affix.itemTypes.forEach(itemType => {
+                    for (const itemType in affix.itemTypes) {
                         describe(itemType, () => {
                             it('is a valid item type', () => {
-                                expect(itemTypes).to.include(itemType);
+                                expect(itemValidator(itemType)).to.be.true;
                             });
                         });
-                    });
+                    }
                 });
 
                 describe('descriptions', () => {
                     it('has descriptions for every item type', () => {
-                        affix.itemTypes.forEach(itemType => {
+                        for (const itemType in affix.itemTypes) {
                             expect(affix.description).to.have.property(itemType).that.is.a('string');
-                        });
+                        }
                     });
 
                     Object.keys(affix.description).forEach(affixDescriptionKey => {
@@ -84,8 +79,8 @@ describe('affixes-by-id', () => {
                             const descriptionString = affix.description[affixDescriptionKey];
 
                             it('is a valid description type', () => {
-                                expect(itemTypes).to.include(affixDescriptionKey);
-                                expect(descriptionString).to.be.a('string');
+                                expect(itemValidator(affixDescriptionKey), 'invalid item type').to.be.true;
+                                expect(descriptionString, 'invalid description value').to.be.a('string');
                             });
 
                             it('is a non-zero-length descriptions', () => {
