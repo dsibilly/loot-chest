@@ -3,12 +3,9 @@ import _cors from 'cors';
 import _express from 'express';
 import _expressRequestId from 'express-request-id';
 import _helmet from 'helmet';
-import _morgan from 'morgan';
 import _logger from './logger';
 import affixRouter from './affix-router';
 import lootRouter from './loot-router';
-
-_morgan.token('id', request => request.id);
 
 const app = _express(),
     port = 3001;

@@ -30,8 +30,7 @@
         "forever": "~1.0.0",
         "helmet": "~3.18.0",
         "isotropic-error": "~0.10.0",
-        "isotropic-make": "~0.10.0",
-        "morgan": "~1.9.1"
+        "isotropic-make": "~0.10.0"
     },
     "description": "Procedural magic item generator for Green Ronin's Fantasy AGE, inspired by Blizzard's Diablo.",
     "devDependencies": {
