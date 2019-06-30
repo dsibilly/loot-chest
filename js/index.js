@@ -36,6 +36,7 @@ app.use((request, response, next) => {
 
 app.use('/affix', affixRouter);
 app.use('/loot', lootRouter);
+app.use(_express.static(`${__dirname}/../client`));
 
 app.listen(port, () => {
     _logger.info({
