@@ -15,21 +15,25 @@
             "@babel/preset-env"
         ]
     },
+    "bugs": {
+        "url": "https://github.com/dsibilly/loot-chest/issues"
+    },
     "dependencies": {
         "@dsibilly/mersenne-twister": "~1.0.2",
-        "body-parser": "^1.19.0",
-        "bunyan": "^1.8.12",
-        "bunyan-express-serializer": "^1.0.0",
-        "compression": "^1.7.4",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "express-request-id": "^1.4.1",
-        "helmet": "^3.18.0",
-        "isotropic-error": "^0.10.0",
-        "isotropic-make": "^0.10.0",
-        "morgan": "^1.9.1"
+        "body-parser": "~1.19.0",
+        "bunyan": "~1.8.12",
+        "bunyan-express-serializer": "~1.0.0",
+        "compression": "~1.7.4",
+        "cors": "~2.8.5",
+        "express": "~4.17.1",
+        "express-request-id": "~1.4.1",
+        "forever": "~1.0.0",
+        "helmet": "~3.18.0",
+        "isotropic-error": "~0.10.0",
+        "isotropic-make": "~0.10.0",
+        "morgan": "~1.9.1"
     },
-    "description": "",
+    "description": "Procedural magic item generator for Green Ronin's Fantasy AGE, inspired by Blizzard's Diablo.",
     "devDependencies": {
         "@babel/cli": "~7.4.4",
         "@babel/core": "~7.4.5",
@@ -80,7 +84,7 @@
         }
     },
     "license": "MIT",
-    "main": "lib/",
+    "main": "lib/index.js",
     "name": "@dsibilly/loot-chest",
     "nyc": {
         "all": true,
@@ -104,6 +108,10 @@
         ],
         "sourceMap": false
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dsibilly/loot-chest.git"
+    },
     "scripts": {
         "build": "BABEL_ENV=build babel js -d lib",
         "coverage": "nyc check-coverage",
@@ -113,8 +121,8 @@
         "prepublishOnly": "npm audit && nyc check-coverage",
         "pretest": "npm run lint",
         "rebuild": "rm -rf ./node_modules && rm package-lock.json && npm install",
-        "start": "npm run build && node lib/index.js | bunyan -o short -L",
+        "start": "npm run build && forever -a -e error.log -o output.log -l /dev/null start lib/index.js",
         "test": "cross-env BABEL_ENV=test nyc mocha"
     },
-    "version": "0.0.1"
+    "version": "1.0.0"
 }
