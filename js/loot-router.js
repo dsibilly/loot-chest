@@ -25,6 +25,26 @@ lootRouter.get('/', (request, response) => {
     });
 });
 
+lootRouter.post('/', (request, response) => {
+    const hasPrefix = request.body.hasOwnProperty('hasPrefix') && request.body.hasPrefix === true,
+        hasSuffix = request.body.hasOwnProperty('hasSuffix') && request.body.hasSuffix === true;
+
+    if (!hasPrefix && !hasSuffix) {
+        // Create a fully random item!
+        loot = new Loot();
+    } else {
+        loot = new Loot({
+            hasPrefix,
+            hasSuffix
+        });
+    }
+
+    loot.generate(result => {
+        response.send(result);
+        logResponse(request.id, result, 200);
+    });
+});
+
 lootRouter.get('/:itemType/', (request, response) => {
     const itemType = request.params.itemType,
         loot = new Loot({
