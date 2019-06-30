@@ -1,19 +1,17 @@
-import affixesById from './affixes-by-id';
+import affixesByIdWithId from './affixes-by-id-with-id';
 
-export default Object.keys(affixesById).reduce((suffixesByItemType, affixId) => {
-    const affix = affixesById[affixId];
+export default Object.keys(affixesByIdWithId).reduce((suffixesByItemType, affixId) => {
+    const affix = affixesByIdWithId[affixId];
 
-    if (affix.type !== 'suffix') {
-        return suffixesByItemType;
+    if (affix.type === 'suffix') {
+        Array.from(affix.itemTypes).forEach(itemType => {
+            if (!suffixesByItemType[itemType]) {
+                suffixesByItemType[itemType] = {};
+            }
+
+            suffixesByItemType[itemType][affixId] = affix;
+        });
     }
-
-    affix.itemTypes.forEach(itemType => {
-        if (!suffixesByItemType[itemType]) {
-            suffixesByItemType[itemType] = {};
-        }
-
-        suffixesByItemType[itemType][affixId] = affix;
-    });
 
     return suffixesByItemType;
 }, {});

@@ -19,9 +19,13 @@
         "@dsibilly/mersenne-twister": "~1.0.2",
         "body-parser": "^1.19.0",
         "bunyan": "^1.8.12",
+        "bunyan-express-serializer": "^1.0.0",
+        "compression": "^1.7.4",
         "cors": "^2.8.5",
         "express": "^4.17.1",
+        "express-request-id": "^1.4.1",
         "helmet": "^3.18.0",
+        "isotropic-error": "^0.10.0",
         "isotropic-make": "^0.10.0",
         "morgan": "^1.9.1"
     },
@@ -70,8 +74,9 @@
         ],
         "root": true,
         "rules": {
-            "isotropic/sort-vars": 0,
-            "sort-imports": 0
+            "isotropic/sort-vars": "off",
+            "no-console": "off",
+            "sort-imports": "off"
         }
     },
     "license": "MIT",
@@ -108,6 +113,7 @@
         "prepublishOnly": "npm audit && nyc check-coverage",
         "pretest": "npm run lint",
         "rebuild": "rm -rf ./node_modules && rm package-lock.json && npm install",
+        "start": "npm run build && node lib/index.js | bunyan -o short -L",
         "test": "cross-env BABEL_ENV=test nyc mocha"
     },
     "version": "0.0.1"

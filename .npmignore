@@ -1,6 +1,7 @@
-.DS_Store
-.nyc_output
-lib
-coverage
-node_modules
 *.log
+.DS_Store
+.git
+.nyc_output
+coverage
+js
+test
