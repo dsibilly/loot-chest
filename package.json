@@ -123,5 +123,5 @@
         "start": "npm run build && forever -a -e error.log -o output.log -l /dev/null start lib/index.js",
         "test": "cross-env BABEL_ENV=test nyc mocha"
     },
-    "version": "1.0.1"
+    "version": "1.0.2"
 }
