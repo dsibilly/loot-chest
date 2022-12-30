@@ -48,7 +48,7 @@
         "depcheck": "~0.8.0",
         "eslint": "~5.16.0",
         "eslint-plugin-isotropic": "~0.4.0",
-        "mocha": "~6.1.4",
+        "mocha": "~10.2.0",
         "nyc": "~14.1.1",
         "pre-commit": "~1.2.2"
     },
